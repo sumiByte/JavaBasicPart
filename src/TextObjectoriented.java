@@ -3,22 +3,18 @@ public class TextObjectoriented {
     public static void main(String[] args) {
 
 
-        //多态：可以将父类的变量指向子类的对象(子类的对象可以赋给父类的引用)
-        /*在之前的创建对象中我们将父类的对象赋给父类引用，把子类的对象赋给子类引用
-        Pople pople = new Pople();
+        //到了这里我们讲讲如果在父类的属性上加上private是否能够被继承和使用
+
         Student student = new Student();
 
-        但是现在，我们把子类的对象赋给父类的引用
+        student.popleName = "老六";
+
+        /*在这里我们可以看到，popleNumber属性加上private后就变成私有属性了
+        当我们通过子类调用时发现它是无法访问的。但这个父类中的popleNumber属性也确实被继承了
+        只是不能够被使用。
+        举个例子，当你的亲戚因病去世时，他的财产你是有继承权的，但不代表你有使用权，因为在他
+        立下遗嘱明确告诉你这笔遗产属于你时，你才有使用权。
          */
 
-        Pople pople = new Student();
-
-        pople.popleName = "王五";
-        pople.popleFun();
-
-        /*在这里我们发现虽然我们把子类的对象赋给了父类的引用，但是我们还是无法方法问到
-        子类中的studentFun();方法，这是因为在父类中并没有这个方法，父类只能方法问到子类继承
-        父类的方法和属性，而无法访问子类自己的属性和方法
-         */
     }
 }
