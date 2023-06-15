@@ -3,17 +3,13 @@ public class TextObjectoriented {
     public static void main(String[] args) {
 
 
-        //到了这里我们讲讲如果在父类的属性上加上private是否能够被继承和使用
+        //现在我们来看父类的对象是否能赋给子类引用
+        Student student = new Pople();
 
-        Student student = new Student();
-
-        student.popleName = "老六";
-
-        /*在这里我们可以看到，popleNumber属性加上private后就变成私有属性了
-        当我们通过子类调用时发现它是无法访问的。但这个父类中的popleNumber属性也确实被继承了
-        只是不能够被使用。
-        举个例子，当你的亲戚因病去世时，他的财产你是有继承权的，但不代表你有使用权，因为在他
-        立下遗嘱明确告诉你这笔遗产属于你时，你才有使用权。
+        /*这里我们发现它报错了，为什么呢，因为子类的属性和方法的丰富度是永远大于父类的
+        因此，我们无法将一个大的类强塞到小类里。举个例子，我们前面学过八大基本数据类型
+        中，我们可以将byte类型转化为int类型，这叫隐式类型提升，但是int却不一定能够转为byte
+        因为，因为int的数值和远大于byte。
          */
 
     }
