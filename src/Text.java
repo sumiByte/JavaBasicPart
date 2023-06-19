@@ -1,51 +1,23 @@
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Text {
 
     public static void main(String[] args) throws IOException {
 
 
-        File file = new File("C:\\Users\\sumis\\Desktop\\Java-IDE-lenth\\JavaFile\\FileJavaClass");
+        PrintWriter printwriter = new PrintWriter("text.txt");
 
-        try {
-            file.createNewFile();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        printwriter.print("这都是写入的内容");
+        printwriter.print(300);
+        printwriter.print("IO流需要使用close关闭才能看见写入的内容");
 
 
-        file.mkdir();
-        if (file.exists() == true){
-            System.out.println("创建成功!");
-        }else {
-            System.out.println("创建失败");
-        }
-
-        if (file.isDirectory() == true) {
-            System.out.println("该类型是文件夹");
-        }else {
-            System.out.println("这是一个文件");
-        }
-
-        if (file.isFile() == true){
-
-            System.out.println("该文件是一个文件");
-        }else {
-
-            System.out.println("该文件不是一个文件");
-        }
-
-        if (file.isHidden() == true){
-
-            System.out.println("隐藏文件夹");
-        }else {
-            System.out.println("非隐藏文件夹");
-        }
-
-        System.out.println("返回了这个文件夹的绝对路径地址：" + file.getAbsolutePath());
-
-
-        System.out.println(file.listFiles());
+        //传入的是对象它写入的对象地址，与对象的内容无关
+        Prosion p = new Prosion(1,"a","m");
+        printwriter.print(p);
+        //关闭流
+        printwriter.close();
     }
 }
